@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>### 滲 21234 ###</title>
+  <meta name="description" content="滲 — 日本サブカルチャーをモチーフにした版画作品のアーカイブ">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=DotGothic16&family=Noto+Sans+JP:wght@300;400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient background -->
+  <div class="bg-layer" id="bgLayer"></div>
+
+  <!-- Registration marks (版画見当マーク) overlay -->
+  <div class="reg-marks" id="regMarks" aria-hidden="true">
+    <span class="reg tl"></span>
+    <span class="reg tr"></span>
+    <span class="reg bl"></span>
+    <span class="reg br"></span>
+  </div>
+
+  <!-- Canvas -->
+  <main class="canvas-container" id="archiveCanvas"></main>
+
+  <!-- Title -->
+  <header class="site-title" id="siteTitle">
+    <div class="title-hash-row">
+      <span class="title-hash">###</span>
+      <h1 class="title-text">滲</h1>
+      <span class="title-hash">###</span>
+    </div>
+    <p class="title-code">21234 &amp;&amp;&amp; archive &amp;&amp;&amp; しみ</p>
+  </header>
+
+  <!-- Audio control (mute / unmute) -->
+  <button class="btn-audio" id="btnAudio" title="音楽オン/オフ" aria-label="音楽切り替え">
+    <span class="audio-icon" id="audioIcon">&#9834;</span>
+  </button>
+
+  <!-- Ink stamp overlay (shown briefly on card click) -->
+  <div class="stamp-ink-flash" id="stampFlash" aria-hidden="true"></div>
+
+  <!-- Artwork Detail Dialog -->
+  <dialog class="artwork-dialog" id="artworkDialog">
+    <div class="dialog-wrapper">
+      <div class="dialog-media">
+        <img id="modalImg" src="" alt="" class="modal-image">
+        <!-- Registration mark corners on modal image -->
+        <span class="modal-reg tl"></span>
+        <span class="modal-reg tr"></span>
+        <span class="modal-reg bl"></span>
+        <span class="modal-reg br"></span>
+      </div>
+
+      <div class="dialog-info">
+        <button class="btn-close" id="btnCloseDialog" aria-label="閉じる">&times;</button>
+
+        <div class="info-project-tag" id="modalProjectTag">—</div>
+        <h2 id="modalTitle" class="modal-title">—</h2>
+
+        <div class="modal-divider"></div>
+
+        <div class="modal-field">
+          <span class="modal-field-label">技法</span>
+          <p id="modalTechnique" class="modal-field-value technique-val">—</p>
+        </div>
+
+        <div class="modal-field">
+          <span class="modal-field-label">説明</span>
+          <p id="modalDescription" class="modal-field-value">—</p>
+        </div>
+
+        <div class="modal-deco" id="modalDeco"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="works.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
